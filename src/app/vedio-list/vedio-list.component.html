@@ -1,0 +1,8 @@
+<div *ngIf="showchildren" style="margin-left:28%">
+  <ul class="list-group">
+    <li *ngFor="let obj of inputData.items" style="list-style-type:none;text-align: justify " (click)="goToVedioDetail(obj)">
+      <img src={{obj.snippet.thumbnails.high.url}} width="150px" height="auto">
+      <span style="width: 40%;display: inline-block;vertical-align: top;margin-left: 10px;">{{obj.snippet.title}}
+      </span></li>
+  </ul>
+</div>

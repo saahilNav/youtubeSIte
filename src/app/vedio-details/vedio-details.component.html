@@ -1,0 +1,6 @@
+<div *ngIf="value" style="margin-left:5%">
+  <!-- 700 normal width with padding 34 % -->
+  <iframe [src]="getSantilizer(basUrl +value.id.videoId)" width="920" height="450" allowfullscreen>
+  </iframe>
+  <p style="padding-left: 10px">{{value.snippet.title}}</p>
+</div>

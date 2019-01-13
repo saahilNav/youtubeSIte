@@ -1,0 +1,19 @@
+<div>
+  <input type="text" name="q" [formControl]="queryField" style="line-height: 39px;width:50%; margin:0 25% 0 25%;border: 2px solid rgba(0,123,255,.5);"
+    class="form-control" placeholder="search">
+</div>
+<div *ngIf="value1">
+  <ul class="list-group" style="border: 1px solid rgba(0,123,255,.5);position: absolute;width:50%; margin:0 25% 0 25%"
+    *ngIf="enableseacrh">
+    <li class="list-group-item" *ngFor="let obj of value1.items" (click)="gotoVedioDetails(obj)">
+      <img src={{obj.snippet.thumbnails.high.url}} width="50px" height="auto">
+      <span style="margin-left:10px;vertical-align: top;">{{obj.snippet.title}}</span>
+    </li>
+  </ul>
+</div>
+<div style="float:left; width:50%;margin-top:2%">
+  <app-vedio-details></app-vedio-details>
+</div>
+<div style="float:right; width:50%;margin-top:2%">
+  <app-vedio-list [showchildren]="showchildren" [inputData]="copy"></app-vedio-list>
+</div>
