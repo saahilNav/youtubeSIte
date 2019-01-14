@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ProjectyoutubeSite1": {
+    "YouTubeProject": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ProjectyoutubeSite1",
+            "outputPath": "dist/YouTubeProject",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ProjectyoutubeSite1:build"
+            "browserTarget": "YouTubeProject:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ProjectyoutubeSite1:build:production"
+              "browserTarget": "YouTubeProject:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ProjectyoutubeSite1:build"
+            "browserTarget": "YouTubeProject:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "ProjectyoutubeSite1-e2e": {
+    "YouTubeProject-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ProjectyoutubeSite1:serve"
+            "devServerTarget": "YouTubeProject:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ProjectyoutubeSite1:serve:production"
+              "devServerTarget": "YouTubeProject:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "ProjectyoutubeSite1"
+  "defaultProject": "YouTubeProject"
 }

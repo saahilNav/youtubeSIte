@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { YouTubeCommonServiceService } from '../you-tube-common-service.service';
+import { YoutubserviceService } from '../youtubservice.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -8,30 +8,43 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./vedio-details.component.scss']
 })
 export class VedioDetailsComponent implements OnInit {
+  public receivValue: any;
+  name: string;
 
-  public value: any;
+  baseUrl = "https://www.youtube.com/embed/";
+  // public url: any;
+  // // iframeSrc: any;
+  constructor(private interservice: YoutubserviceService, private sanitizer: DomSanitizer) {
 
-  public basUrl = "https://www.youtube.com/embed/";
-
-
-  constructor(private interservice: YouTubeCommonServiceService, private santilizer: DomSanitizer) { }
+  }
 
   ngOnInit() {
-    this.interservice.valueChange.subscribe(data => {
-      this.value = data;
-    })
-    this.getDatFromVedioList();
+    this.interservice.valueChange.subscribe((data) => {
+      this.receivValue = data,
+        console.log("this is recive From SearchCOmponent", this.receivValue)
+    });
+    this. getDatFromVedioList();
+  
   }
+
   getDatFromVedioList() {
-    this.interservice.valueChange2.subscribe(data => {
-      this.value = data;
-    })
+    this.interservice.missionAnnouncedSource.subscribe((data)=>{
+      this.receivValue=data;
+      console.log("in VedioDetails",this.receivValue)
+    });
   }
 
-
-  getSantilizer(obj) {
-    return this.santilizer.bypassSecurityTrustResourceUrl(obj)
+  public getSantizeUrl(url: string) {
+    console.log("this is url", url);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
+
+  // public goToDetailsData(obj){
+  //  this.receivValue=obj;
+  //   console.log("receive data Frm CHild",this.receivValue)
+  // }
+
+
 
 
 }

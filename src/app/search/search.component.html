@@ -1,0 +1,19 @@
+<div  style="width:100%;margin-top:10px">
+  <div  style="width:100%">
+    <input type="text" style="width:50%;line-height:39px;width:50%; margin:0 23% 0 23%;border: 2px solid rgba(0,123,255,.5)" 
+     id="keyword" name="q" [formControl]="queryField" placeholder="Search" class="form-control">
+  </div>
+  <ul class="list-group" style="width:100%; margin-top:6px;" *ngIf="!showChilren" >
+    <li class="list-group-item" *ngFor="let obj of data.items" (click)="gotoDetail(obj)" >
+      <img src={{obj.snippet.thumbnails.high.url}} width="100px" height="auto">
+      <span class="title">{{obj.snippet.title}}</span>
+    </li>
+  </ul>
+  
+</div>
+<!-- <div *ngIf="showChilren"  style="float:left;width:46%;">
+     
+    </div>
+<div style="float:right;width:54%; margin-top:6%">
+  <app-video-list [vedioList]="data" [showChilren]="showChilren"></app-video-list>
+</div> -->

@@ -20,7 +20,7 @@ export class YouTubeCommonServiceService {
   }
 
   searchData(term) {
-    return this.http.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyCjBRPz2l14dM4d0omghFAWBgvc0qjjNGY&type=video&maxlength=10&part=snippet&q=" + term)
+    return this.http.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyCjBRPz2l14dM4d0omghFAWBgvc0qjjNGY&type=video&maxResults=10&part=snippet&q=" + term)
   }
 
 }

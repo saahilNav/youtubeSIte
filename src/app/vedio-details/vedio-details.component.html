@@ -1,6 +1,12 @@
-<div *ngIf="value" style="margin-left:5%">
-  <!-- 700 normal width with padding 34 % -->
-  <iframe [src]="getSantilizer(basUrl +value.id.videoId)" width="920" height="450" allowfullscreen>
-  </iframe>
-  <p style="padding-left: 10px">{{value.snippet.title}}</p>
+
+<div *ngIf="receivValue" class="frameV" style="margin-top:13%" >
+  <!-- <iframe src={{receivValue.id.videoId}} width="420" height="auto"></iframe>
+  
+    <p>{{receivValue.snippet.description}}</p>  -->
+  <iframe width="710" height="450" [src]="getSantizeUrl(baseUrl+receivValue.id.videoId)"  allowfullscreen></iframe>
+  <p class="p1">{{receivValue.snippet.title}}</p>
+  <p  style="float:left; margin-top: 10px"><i class='far fa-check-circle' style='font-size:15px'>{{receivValue.snippet.channelTitle}}</i></p>
+
+  <!-- "{{url+'('+receivValue.id.videoId + ')'}}" -->
 </div>
+<!-- margin-left: 47%; -->

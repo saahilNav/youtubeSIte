@@ -3,26 +3,32 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchItemComponent } from './search-item/search-item.component';
-import { VedioDetailsComponent } from './vedio-details/vedio-details.component';
+import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { YoutubserviceService } from './youtubservice.service';
+import { VedioDetailsComponent } from './vedio-details/vedio-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { VedioListComponent } from './vedio-list/vedio-list.component';
-
+import { YoutubePlayerModule } from 'ngx-youtube-player';
+import { EmbedVideo } from 'ngx-embed-video';
+import { VideoListComponent } from './video-list/video-list.component';
+import { VideoItemComponent } from './video-item/video-item.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SearchItemComponent,
+    SearchComponent,
     VedioDetailsComponent,
-    VedioListComponent
+    VideoListComponent,
+    VideoItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    YoutubePlayerModule,
+      EmbedVideo.forRoot()
   ],
-  providers: [],
+  providers: [YoutubserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
